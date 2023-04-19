@@ -1,5 +1,6 @@
 import openai
 import discord
+import os
 
 # this part is just for kat
 # openai.api_type = "azure"
@@ -10,22 +11,9 @@ GUILD = "{Creative Tech Apprenticeship}"
 
 # create an object that will control our discord bot
 client = discord.Client(intents=discord.Intents.default())
-
-with open("keys.txt") as f:
-	# converting our tezt file to a list of lines
-	lines = f.read().split('\n')
-	# openai api key
-	openai.api_key = lines[0]
-
-	# discord token
-	# sometimes you need to use all caps to signify it is a static variable
-	DISCORD_TOKEN = lines[1]
-
-	# this part is just for kat
-	# openai.api_base = lines[2]
-
-# close the file
-f.close()
+openai.api_key = os.environ["API_KEY"]
+DISCORD_TOKEN = os.environ["DISCORD_TOKEN"]
+openai.api_base = os.environ["API_BASE"]
 
 # setting up function that gets ardu-bot online
 @client.event
