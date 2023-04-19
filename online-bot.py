@@ -13,7 +13,7 @@ GUILD = "{Creative Tech Apprenticeship}"
 client = discord.Client(intents=discord.Intents.default())
 openai.api_key = os.environ["API_KEY"]
 DISCORD_TOKEN = os.environ["DISCORD_TOKEN"]
-openai.api_base = os.environ["API_BASE"]
+# openai.api_base = os.environ["API_BASE"]
 
 # setting up function that gets ardu-bot online
 @client.event
