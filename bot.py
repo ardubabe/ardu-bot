@@ -34,7 +34,7 @@ async def on_ready():
 		if guild.name == GUILD:
 			break
 	# print out nice statement saying our bot is online (only in command promt)
-	print(f'{client.user} has connected to Discord!')
+	print(f'{client.user} has connected to Discord! HELL YEAH BABEH ;3')
 
 @client.event
 async def on_message(message):
